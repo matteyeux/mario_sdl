@@ -204,17 +204,15 @@ int game_event(stGame *game)
 				case SDLK_ESCAPE:
 					result = -1;
 					break;
-
-			case SDLK_UP:
-			case SDLK_DOWN:
-			case SDLK_LEFT:
-			case SDLK_RIGHT:
-				game_movePlayer(game, e.key.keysym.sym);
-				break;
-
-				default :
-					fprintf(stderr, "unknown key : %d\n", e.key.keysym.sym);
+				case SDLK_UP:
+				case SDLK_DOWN:
+				case SDLK_LEFT:
+				case SDLK_RIGHT:
+					game_movePlayer(game, e.key.keysym.sym);
 					break;
+				default :
+				fprintf(stderr, "unknown key : %d\n", e.key.keysym.sym);
+				break;
 			}
 		}
 	}
